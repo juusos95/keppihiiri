@@ -9,17 +9,23 @@ public class spearControl : MonoBehaviour
     int wallMask;
     Rigidbody rb;
 
+    Vector3 m_EulerAngleVelocity;
+
     // Start is called before the first frame update
     void Start()
     {
         wallMask = LayerMask.GetMask("invisibleWall");
         rb = GetComponent<Rigidbody>();
+
+        m_EulerAngleVelocity = new Vector3(0, 100, 0);
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         rotateSpear();
+
+        transform.position = new Vector3(transform.position.x, transform.position.y, -3.5f);
     }
 
     void rotateSpear()
@@ -36,7 +42,11 @@ public class spearControl : MonoBehaviour
 
             Quaternion newRot = Quaternion.LookRotation(toMouse);
 
-            rb.MoveRotation(newRot);
+            Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
+
+            //rb.MoveRotation(newRot * deltaRotation);
+
+            transform.rotation = new Quaternion(0, 0, newRot * deltaRotation);
         }
     }
 }
