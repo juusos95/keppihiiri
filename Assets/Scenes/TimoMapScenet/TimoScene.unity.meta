@@ -1,5 +1,14 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Scenes/TimoMapScenet/TimoScene.unity.meta
 guid: adae6b767897d2548aceec404f10c642
+=======
+<<<<<<< HEAD
+guid: 57df2bb7ba9a04a4cbf6f7ae498603cb
+=======
+guid: 855cc2cd7b198f74b902edf08ef9c0d8
+>>>>>>> master
+folderAsset: yes
+>>>>>>> master:Assets/Prefabs.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
