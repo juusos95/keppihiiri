@@ -8,7 +8,7 @@ public class Berry : MonoBehaviour
     FixedJoint fj;
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "Berri"&&collider.GetComponent<BoxCollider>())
+        if (collider.gameObject.tag == "Spear"&&collider.GetComponent<BoxCollider>())
         {
             fj = gameObject.AddComponent(typeof(FixedJoint)) as FixedJoint;
             rb = collider.gameObject.GetComponentInChildren(typeof(Rigidbody)) as Rigidbody;
