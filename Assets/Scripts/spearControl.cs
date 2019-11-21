@@ -4,20 +4,17 @@ using UnityEngine;
 
 public class spearControl : MonoBehaviour
 {
-    Vector3 mousePos;
-    float camRayLength = 100;
-    int wallMask;
     Rigidbody rb;
-
-    Vector3 m_EulerAngleVelocity;
+    public float angle;
+    ConfigurableJoint cj;
+    float anchorX;
+    float anchorY;
 
     // Start is called before the first frame update
     void Start()
     {
-        wallMask = LayerMask.GetMask("invisibleWall");
         rb = GetComponent<Rigidbody>();
-
-        m_EulerAngleVelocity = new Vector3(0, 100, 0);
+        cj = GetComponent<ConfigurableJoint>();
     }
 
     // Update is called once per frame
@@ -30,23 +27,21 @@ public class spearControl : MonoBehaviour
 
     void rotateSpear()
     {
-        Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Vector3 toMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition - transform.position);
 
-        RaycastHit wallHit;
+        toMouse.z = 0;
 
-        if(Physics.Raycast(camRay, out wallHit, camRayLength, wallMask))
-        {
-            Vector3 toMouse = wallHit.point - transform.position;
+        anchorX = (toMouse.x - transform.position.x) / 10;
+        anchorX = Mathf.Clamp(anchorX, -0.75f, 0.75f);
 
-            toMouse.z = 0;
+        anchorY = (toMouse.y - transform.position.y) / -10 * 2.5f;
+        anchorY = Mathf.Clamp(anchorY, -0.1f, 0.9f);
 
-            Quaternion newRot = Quaternion.LookRotation(toMouse);
+        cj.connectedAnchor = new Vector3(anchorX, anchorY, 0);
 
-            Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.deltaTime);
+        angle = Mathf.Atan2(toMouse.y, toMouse.x) * Mathf.Rad2Deg;
+        Quaternion newRot = Quaternion.AngleAxis(angle, Vector3.forward);
 
-            //rb.MoveRotation(newRot * deltaRotation);
-
-            transform.rotation = new Quaternion(0, 0, newRot * deltaRotation);
-        }
+        rb.MoveRotation(newRot);
     }
 }
