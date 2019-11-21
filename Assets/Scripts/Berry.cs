@@ -16,6 +16,18 @@ public class Berry : MonoBehaviour
             fj.connectedMassScale = 0;
         }
     }
+    private void Update()
+    {
+        if (Input.GetKey("e") && GetComponent<FixedJoint>())            //Eat berry that is stuck on the spear
+        {
+
+            Destroy(gameObject);
+        }
+        if (Input.GetMouseButtonDown(0) && GetComponent<FixedJoint>())  //Detach berry from spear
+        {
+            Destroy(GetComponent<FixedJoint>());
+        }
+    }
     /*private void Update()
     {
         if (Input.GetMouseButtonDown(0))
