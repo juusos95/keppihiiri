@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Berri
   - Spear
+  - Enemy
   layers:
   - Default
   - TransparentFX
