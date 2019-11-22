@@ -34,8 +34,8 @@ public class spearControl : MonoBehaviour
         anchorX = (toMouse.x - transform.position.x) / 10;
         anchorX = Mathf.Clamp(anchorX, -0.75f, 0.75f);
 
-        anchorY = (toMouse.y - transform.position.y) / -10 * 2.5f;
-        anchorY = Mathf.Clamp(anchorY, -0.1f, 0.9f);
+        anchorY = (toMouse.y - transform.position.y) / -10 * 2.75f;
+        anchorY = Mathf.Clamp(anchorY, -0.15f, 0.9f);
 
         cj.connectedAnchor = new Vector3(anchorX, anchorY, 0);
 

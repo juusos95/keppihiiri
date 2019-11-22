@@ -4,18 +4,14 @@ using UnityEngine;
 using System;
 public class StickJab : MonoBehaviour
 {
-    float _lastUpdateTime;
+    public bool poking;
+
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !poking)
         {
-            float joku = 1 * Time.deltaTime;
-
-            if (Time.time - _lastUpdateTime >= 1.0f)
-            {
-                _lastUpdateTime = Time.time;
-                transform.localPosition = new Vector3(transform.localPosition.x + joku, 0, 0);
-            }
+            StartCoroutine(poke(1.0f, 0.1f));
+            poking = true;
 
             /*while (transform.localPosition.x < 1)
             {
@@ -23,6 +19,22 @@ public class StickJab : MonoBehaviour
             }*/
         }
     }
+    IEnumerator poke(float distance, float time)
+    {
+        float currentX = transform.localPosition.x;
+
+        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / time)
+        {
+            transform.localPosition = new Vector3(Mathf.Lerp(currentX, distance, t), 0, 0);
+            yield return null;
+        }
+        if (poking)
+        {
+            poking = false;
+            StartCoroutine(poke(0.0f, 0.2f));
+        }
+    }
+
     /*IEnumerator Jab()
     {
         transform.localPosition = new Vector3(1, 0, 0);
