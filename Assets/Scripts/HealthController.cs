@@ -6,15 +6,18 @@ using UnityEngine.UI;
 public class HealthController : MonoBehaviour
 {
     public Image healthBar;
+    float maxHealth = 100f;
+    public static float health;
     // Start is called before the first frame update
     void Start()
     {
-        healthBar = startHealth;
+        healthBar = GetComponent<Image>();
+        health = maxHealth;
     }
 
     // Update is called once per frame
-    public void TakeDamage(float amount)
+    public void Update()
     {
-        healthBar.fillAmount = health / startHealth;
+        healthBar.fillAmount = health / maxHealth;
     }
 }
