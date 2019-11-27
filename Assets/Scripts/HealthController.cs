@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 <<<<<<< HEAD
@@ -33,4 +33,4 @@ public class HealthController : MonoBehaviour
         healthBar.fillAmount = health / startHealth;
 >>>>>>> master
     }
-}
+}*/
