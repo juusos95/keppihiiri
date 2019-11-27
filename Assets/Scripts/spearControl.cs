@@ -7,14 +7,20 @@ public class spearControl : MonoBehaviour
     Rigidbody rb;
     public float angle;
     ConfigurableJoint cj;
-    float anchorX;
-    float anchorY;
+    public float anchorX;
+    public float anchorY;
+
+    int wallMask;
+    float camRayLength = 100;
+    public Vector3 toMouse;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         cj = GetComponent<ConfigurableJoint>();
+
+        wallMask = LayerMask.GetMask("wall");
     }
 
     // Update is called once per frame
@@ -27,21 +33,27 @@ public class spearControl : MonoBehaviour
 
     void rotateSpear()
     {
-        Vector3 toMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition - transform.position);
+        Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        toMouse.z = 0;
+        RaycastHit wallHit;
 
-        anchorX = (toMouse.x - transform.position.x) / 10;
-        anchorX = Mathf.Clamp(anchorX, -0.75f, 0.75f);
+        if (Physics.Raycast(camRay, out wallHit, camRayLength, wallMask))
+        {
+            toMouse = wallHit.point - transform.position;
+            toMouse.z = 0;
 
-        anchorY = (toMouse.y - transform.position.y) / -10 * 2.75f;
-        anchorY = Mathf.Clamp(anchorY, -0.15f, 0.9f);
+            anchorX = toMouse.x / 10; //(toMouse.x - transform.position.x) / 10;
+            anchorX = Mathf.Clamp(anchorX, -0.75f, 0.75f);
 
-        cj.connectedAnchor = new Vector3(anchorX, anchorY, 0);
+            anchorY = toMouse.y / -10 * 2; //(toMouse.y - transform.position.y) / -10 * 1.5f;
+            anchorY = Mathf.Clamp(anchorY, -0.15f, 0.9f);
 
-        angle = Mathf.Atan2(toMouse.y, toMouse.x) * Mathf.Rad2Deg;
-        Quaternion newRot = Quaternion.AngleAxis(angle, Vector3.forward);
+            cj.connectedAnchor = new Vector3(anchorX, anchorY, 0);
 
-        rb.MoveRotation(newRot);
+            angle = Mathf.Atan2(toMouse.y, toMouse.x) * Mathf.Rad2Deg;
+            Quaternion newRot = Quaternion.AngleAxis(angle, Vector3.forward);
+
+            rb.MoveRotation(newRot);
+        }
     }
 }

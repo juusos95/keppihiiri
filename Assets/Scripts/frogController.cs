@@ -34,14 +34,13 @@ public class frogController : MonoBehaviour
     {
         if (other.gameObject.tag == "jumpCheck" && player.position.x < transform.position.x)
         {
-            rb.AddForce(new Vector3(-250, 500, 0));
+            rb.AddForce(new Vector3(-500, 1000, 0));
         }
 
         else if (other.gameObject.tag == "jumpCheck" && player.position.x > transform.position.x)
         {
-            rb.AddForce(new Vector3(250, 500, 0));
+            rb.AddForce(new Vector3(500, 1000, 0));
         }
-
         else if (other.gameObject.tag == "aggroCheck")
         {
             aggro = true;
