@@ -20,7 +20,7 @@ public class Berry : MonoBehaviour
     {
         if (Input.GetKey("e") && GetComponent<FixedJoint>())            //Eat berry that is stuck on the spear
         {
-            HealthController.health += 20f;
+            //HealthController.health += 20f;
             Destroy(gameObject);
         }
         if (Input.GetMouseButtonDown(0) && GetComponent<FixedJoint>())  //Detach berry from spear
