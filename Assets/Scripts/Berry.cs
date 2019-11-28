@@ -6,10 +6,12 @@ public class Berry : MonoBehaviour
 {
     Rigidbody rb;
     FixedJoint fj;
+    public SphereCollider cc;
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "Spear"&&collider.GetComponent<BoxCollider>())
         {
+            cc.enabled = false;
             fj = gameObject.AddComponent(typeof(FixedJoint)) as FixedJoint;
             rb = collider.gameObject.GetComponentInChildren(typeof(Rigidbody)) as Rigidbody;
             fj.connectedBody = rb;
@@ -25,6 +27,7 @@ public class Berry : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0) && GetComponent<FixedJoint>())  //Detach berry from spear
         {
+            cc.enabled = true;
             Destroy(GetComponent<FixedJoint>());
         }
     }
