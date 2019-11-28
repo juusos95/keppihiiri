@@ -7,6 +7,6 @@ public class Damage : MonoBehaviour
     // Start is called before the first frame update
     void OnTriggerEnter (Collider col)
     {
-        //HealthController.health -= 20f;
+        HealthController.health -= 20f;
     }
 }

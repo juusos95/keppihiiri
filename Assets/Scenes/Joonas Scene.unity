@@ -380,7 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bc81ccade613c14dad07fe35ccf9934, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 367392163}
+  healthBar: {fileID: 0}
 --- !u!1 &403128875
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,10 +850,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1667799567}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50ff49032e2b75d439a563b8f9777ab0, type: 3}
+  m_Script: {fileID: 11500000, guid: 653f96f1a02733042b0c8363f165b794, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
 --- !u!1 &1964552739
 GameObject:
   m_ObjectHideFlags: 0
