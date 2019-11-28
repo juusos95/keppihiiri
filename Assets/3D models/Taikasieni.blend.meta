@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 5ffa5f9cc730823449d920f2d4a4aca6
+=======
+guid: 0e80b7e1ed20d494abb7bb1ee698c2d3
+>>>>>>> TuukkaBranch
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
