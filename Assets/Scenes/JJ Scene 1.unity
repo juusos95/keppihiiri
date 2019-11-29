@@ -530,6 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22b44ba0756ba8840b6c7b3ba62c092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   cc: {fileID: 961416578}
 --- !u!54 &961416577
 Rigidbody:
@@ -1578,13 +1579,27 @@ GameObject:
   - component: {fileID: 3483546874276231288}
   - component: {fileID: 6576716115034577788}
   - component: {fileID: 6576716115034577785}
+  - component: {fileID: 2910694665088535717}
   m_Layer: 10
   m_Name: spear placeholder (1)
-  m_TagString: Untagged
+  m_TagString: Spear
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &2910694665088535717
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2910694665088535716}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.11507249, y: 0.20131588, z: 1}
+  m_Center: {x: 1.5973691, y: -0.0018749237, z: 0}
 --- !u!1 &2956723831396827512
 GameObject:
   m_ObjectHideFlags: 0
@@ -2413,7 +2428,6 @@ GameObject:
   - component: {fileID: 6576716114690239796}
   - component: {fileID: 6576716114690239795}
   - component: {fileID: 6576716114690239794}
-  - component: {fileID: 6576716114690239798}
   m_Layer: 10
   m_Name: spear parent
   m_TagString: Spear
@@ -2562,19 +2576,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &6576716114690239798
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6576716114690239793}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.11507249, y: 0.20131588, z: 1}
-  m_Center: {x: 1.5973691, y: -0.0018749237, z: 0}
 --- !u!114 &6576716115034577785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2723,6 +2724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22b44ba0756ba8840b6c7b3ba62c092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb: {fileID: 0}
   cc: {fileID: 6655273678093524158}
 --- !u!1 &6702246422658983325
 GameObject:

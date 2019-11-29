@@ -6,6 +6,8 @@ public class GameManager : MonoBehaviour
 {
     bool gameHasEnded = false;
 
+    public bool poking;
+
     public float restartDelay = 1f;
 
     public float finishDelay = 1f;
@@ -47,5 +49,17 @@ public class GameManager : MonoBehaviour
     void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void poke()
+    {
+        if (!poking)
+        {
+            poking = true;
+        }
+        else if (poking)
+        {
+            poking = false;
+        }
     }
 }
