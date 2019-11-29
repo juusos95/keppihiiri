@@ -4,14 +4,28 @@ using UnityEngine;
 using System;
 public class StickJab : MonoBehaviour
 {
-    public bool poking;
+    public GameManager gamemanager;
+    GameManager gm;
+    bool poking;
 
     private void Update()
     {
+        poking = gamemanager.poking;
+
         if (Input.GetMouseButtonDown(0) && !poking)
         {
+<<<<<<< HEAD
             StartCoroutine(poke(1.0f, 0.1f));
             poking = true;
+=======
+            StartCoroutine(poke(2.0f, 0.08f));
+            gamemanager.poke();
+
+            /*while (transform.localPosition.x < 1)
+            {
+                transform.localPosition = new Vector3(transform.localPosition.x + 1 * Time.deltaTime, 0, 0);
+            }*/
+>>>>>>> TuukkaBranch
         }
     }
     IEnumerator poke(float distance, float time)
@@ -25,7 +39,7 @@ public class StickJab : MonoBehaviour
         }
         if (poking)
         {
-            poking = false;
+            gamemanager.poke();
             StartCoroutine(poke(0.0f, 0.2f));
         }
     }
