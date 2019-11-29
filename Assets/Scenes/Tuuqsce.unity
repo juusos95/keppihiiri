@@ -742,7 +742,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1889916369}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd47ad93f68e7f54bab2194cae2faeec, type: 3}
+  m_Script: {fileID: 11500000, guid: e93646967d4973148b2bb7d195e866a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bc: {fileID: 1889916372}
@@ -1562,6 +1562,7 @@ MonoBehaviour:
   angle: 0
   anchorX: 0
   anchorY: 0
+  toMouse: {x: 0, y: 0, z: 0}
 --- !u!1 &3777479570776491354
 GameObject:
   m_ObjectHideFlags: 0

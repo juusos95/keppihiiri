@@ -1,18 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-<<<<<<< HEAD
 
-public class spearTip : MonoBehaviour
-{
-    [SerializeField] Transform spearParent;
 
-    void Update()
-    {
-        transform.rotation = spearParent.rotation;
-    }
-}
-=======
 public class spearTip : MonoBehaviour
 {
 
@@ -51,4 +41,3 @@ public class spearTip : MonoBehaviour
         Debug.Log("poke3");
     }
 }
->>>>>>> TuukkaBranch

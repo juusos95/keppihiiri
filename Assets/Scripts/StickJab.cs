@@ -14,10 +14,8 @@ public class StickJab : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0) && !poking)
         {
-<<<<<<< HEAD
             StartCoroutine(poke(1.0f, 0.1f));
             poking = true;
-=======
             StartCoroutine(poke(2.0f, 0.08f));
             gamemanager.poke();
 
@@ -25,7 +23,6 @@ public class StickJab : MonoBehaviour
             {
                 transform.localPosition = new Vector3(transform.localPosition.x + 1 * Time.deltaTime, 0, 0);
             }*/
->>>>>>> TuukkaBranch
         }
     }
     IEnumerator poke(float distance, float time)
