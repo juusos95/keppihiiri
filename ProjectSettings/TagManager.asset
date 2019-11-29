@@ -7,9 +7,6 @@ TagManager:
   - aggroCheck
   - jumpCheck
   - ground
-  - Berri
-  - Spear
-  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -20,9 +17,9 @@ TagManager:
   - 
   - 
   - wall
-  - Ground
-  - Spear
-  - Berry
+  - 
+  - 
+  - 
   - 
   - 
   - 

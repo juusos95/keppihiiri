@@ -5,11 +5,8 @@ using UnityEngine;
 public class Damage : MonoBehaviour
 {
     // Start is called before the first frame update
-    void OnTriggerEnter (Collider collider)
+    void OnTriggerEnter (Collider col)
     {
-        if (collider.gameObject.tag == "Player" && collider.GetComponent<CapsuleCollider>())
-        {
-            HealthController.health -= 20f;
-        }
+        //HealthController.health -= 20f;
     }
 }
