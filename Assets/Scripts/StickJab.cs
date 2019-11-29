@@ -12,11 +12,6 @@ public class StickJab : MonoBehaviour
         {
             StartCoroutine(poke(1.0f, 0.1f));
             poking = true;
-
-            /*while (transform.localPosition.x < 1)
-            {
-                transform.localPosition = new Vector3(transform.localPosition.x + 1 * Time.deltaTime, 0, 0);
-            }*/
         }
     }
     IEnumerator poke(float distance, float time)
