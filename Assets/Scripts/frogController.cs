@@ -20,11 +20,11 @@ public class frogController : MonoBehaviour
         {
             Debug.Log("hei");
         }*/
-        if (aggro && player.position.x < transform.position.x && !goBack)
+        if (aggro && player.position.x < transform.position.x && !goBack && grounded)
         {
             transform.position = new Vector3(transform.position.x + 1.5f * -Time.deltaTime, transform.position.y, transform.position.z);
         }
-        else if (aggro && player.position.x > transform.position.x && !goBack)
+        else if (aggro && player.position.x > transform.position.x && !goBack && grounded)
         {
             transform.position = new Vector3(transform.position.x + 1.5f * Time.deltaTime, transform.position.y, transform.position.z);
         }
@@ -34,13 +34,14 @@ public class frogController : MonoBehaviour
     {
         if (other.gameObject.tag == "jumpCheck" && player.position.x < transform.position.x)
         {
-            rb.AddForce(new Vector3(-500, 1000, 0));
+            rb.AddForce(new Vector3(0, 400, 0));
         }
 
         else if (other.gameObject.tag == "jumpCheck" && player.position.x > transform.position.x)
         {
-            rb.AddForce(new Vector3(500, 1000, 0));
+            rb.AddForce(new Vector3(0, 400, 0));
         }
+
         else if (other.gameObject.tag == "aggroCheck")
         {
             aggro = true;
@@ -48,12 +49,12 @@ public class frogController : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "jumpCheck" && player.position.x < transform.position.x && grounded)
+        if (other.gameObject.tag == "goBack" && player.position.x < transform.position.x && grounded)
         {
             transform.position = new Vector3(transform.position.x + 1.5f * Time.deltaTime, transform.position.y, transform.position.z);
             goBack = true;
         }
-        else if (other.gameObject.tag == "jumpCheck" && player.position.x > transform.position.x && grounded)
+        else if (other.gameObject.tag == "goBack" && player.position.x > transform.position.x && grounded)
         {
             transform.position = new Vector3(transform.position.x + -1.5f * Time.deltaTime, transform.position.y, transform.position.z);
             goBack = true;
@@ -61,11 +62,20 @@ public class frogController : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
+        if (other.gameObject.tag == "jumpCheck" && !grounded && player.position.x < transform.position.x)
+        {
+            rb.velocity = new Vector3(-10, rb.velocity.y, 0);
+        }
+        else if (other.gameObject.tag == "jumpCheck" && !grounded && player.position.x > transform.position.x)
+        {
+            rb.velocity = new Vector3(10, rb.velocity.y, 0);
+        }
+
         if (other.gameObject.tag == "aggroCheck")
         {
             aggro = false;
         }
-        if (other.gameObject.tag == "jumpCheck")
+        if (other.gameObject.tag == "goBack")
         {
             goBack = false;
         }
