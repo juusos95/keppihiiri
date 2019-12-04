@@ -13,6 +13,9 @@ public class Berry : MonoBehaviour
     public SphereCollider cc;
     public Rigidbody rb;
     FixedJoint fj;
+    Transform temp;
+
+
     private void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.tag == "Spear"&&collider.GetComponent<BoxCollider>() && !berryOn && gamemanager.poking)
@@ -34,6 +37,7 @@ public class Berry : MonoBehaviour
         }
         else if (Input.GetMouseButtonDown(0) && GetComponent<FixedJoint>())  //Detach berry from spear
         {
+
             StartCoroutine(Kill());
 
 
@@ -49,15 +53,18 @@ public class Berry : MonoBehaviour
         cc.enabled = true;
         Destroy(GetComponent<FixedJoint>());
 
-
-        transform.rotation = spearParent.rotation;
+        temp = gameObject.transform.parent;
+        gameObject.transform.parent = spearParent.transform;
+        //transform.rotation = spearParent.rotation;
         berryOn = false;
         StartCoroutine(Push());
+        gameObject.transform.parent = temp;
     }
     IEnumerator Push()
     {
         yield return new WaitForSeconds(push);
-        rb.AddRelativeForce(Vector3.right * 5f);
+        rb.AddRelativeForce(Vector3.forward * 5f);
+        //rb.velocity = Vector3.right * 15f;
         berryOn = false;
     }
     /*private void Update()
