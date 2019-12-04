@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 403128877}
   - component: {fileID: 403128876}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: HealthUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2539,7 +2539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7679eedc5d5cf74ea8843300c562d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poking: 0
+  gamemanager: {fileID: 7862696060890327053}
 --- !u!65 &6576716115034577788
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2589,7 +2589,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 126
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!1 &6655273678093524157
 GameObject:
@@ -2675,7 +2675,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22b44ba0756ba8840b6c7b3ba62c092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gamemanager: {fileID: 7862696060890327053}
+  spearParent: {fileID: 6576716114690239797}
   cc: {fileID: 6655273678093524158}
+  rb: {fileID: 6655273678093524155}
 --- !u!1 &6702246422658983325
 GameObject:
   m_ObjectHideFlags: 0
@@ -3014,6 +3017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9be472ccf88e7d54d91ebc52f98e4778, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  poking: 0
   restartDelay: 1
   finishDelay: 1
   finishMenuUI: {fileID: 0}
