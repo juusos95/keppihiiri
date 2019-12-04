@@ -8,6 +8,7 @@ public class HealthController : MonoBehaviour
     public Image healthBar;
     float maxHealth = 100f;
     public static float health;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,8 @@ public class HealthController : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Update()
+
+    public void Update ()
     {
         healthBar.fillAmount = health / maxHealth;
     }

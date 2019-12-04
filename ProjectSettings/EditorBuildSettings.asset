@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Tuuqsce.unity
+    guid: 52185ff8321df56488f8e0e74b9193e0
   m_configObjects: {}
