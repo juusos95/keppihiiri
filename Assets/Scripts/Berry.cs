@@ -9,6 +9,7 @@ public class Berry : MonoBehaviour
 
     [SerializeField] Transform spearParent;
     private float destroy = 0.0f;
+    private float push = 0.1f;
     public SphereCollider cc;
     public Rigidbody rb;
     FixedJoint fj;
@@ -50,6 +51,12 @@ public class Berry : MonoBehaviour
 
 
         transform.rotation = spearParent.rotation;
+        berryOn = false;
+        StartCoroutine(Push());
+    }
+    IEnumerator Push()
+    {
+        yield return new WaitForSeconds(push);
         rb.AddRelativeForce(Vector3.right * 5f);
         berryOn = false;
     }
