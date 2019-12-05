@@ -26,6 +26,7 @@ public class Berry : MonoBehaviour
             fj.connectedBody = rb;
             fj.connectedMassScale = 0;
             berryOn = true;
+            Debug.Log("Berry is attached");
         }
     }
     private void Update()
@@ -52,18 +53,18 @@ public class Berry : MonoBehaviour
 
         cc.enabled = true;
         Destroy(GetComponent<FixedJoint>());
-
-        temp = gameObject.transform.parent;
-        gameObject.transform.parent = spearParent.transform;
-        //transform.rotation = spearParent.rotation;
+        Physics.IgnoreCollision(tip.GetComponent<BoxCollider>(), cc.GetComponent<SphereCollider>());
+        //temp = gameObject.transform.parent;
+        //gameObject.transform.parent = spearParent.transform;
+        transform.rotation = spearParent.rotation;
         berryOn = false;
         StartCoroutine(Push());
-        gameObject.transform.parent = temp;
+        //gameObject.transform.parent = temp;
     }
     IEnumerator Push()
     {
         yield return new WaitForSeconds(push);
-        Physics.IgnoreCollision(tip.GetComponent<BoxCollider>(), cc.GetComponent<SphereCollider>());
+        
         rb.AddRelativeForce(Vector3.forward * 5f);
         //rb.velocity = Vector3.right * 15f;
         berryOn = false;
