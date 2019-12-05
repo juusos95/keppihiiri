@@ -14,7 +14,7 @@ public class Berry : MonoBehaviour
     public Rigidbody rb;
     FixedJoint fj;
     Transform temp;
-
+    public BoxCollider tip;
 
     private void OnTriggerEnter(Collider collider)
     {
@@ -63,6 +63,7 @@ public class Berry : MonoBehaviour
     IEnumerator Push()
     {
         yield return new WaitForSeconds(push);
+        Physics.IgnoreCollision(tip.GetComponent<BoxCollider>(), cc.GetComponent<SphereCollider>());
         rb.AddRelativeForce(Vector3.forward * 5f);
         //rb.velocity = Vector3.right * 15f;
         berryOn = false;
