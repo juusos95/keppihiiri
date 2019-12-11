@@ -153,13 +153,13 @@ MonoBehaviour:
   - name: Walk
     clip: {fileID: 8300000, guid: 47f2bf48598b9a14793483322a1eaff4, type: 3}
     volume: 1
-    pitch: 0
+    pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: StickJab
     clip: {fileID: 8300000, guid: 3e83a7ecbd2e2a64594852a7aefeb31b, type: 3}
     volume: 1
-    pitch: 0
+    pitch: 1.5
     loop: 0
     source: {fileID: 0}
   - name: 
@@ -2679,6 +2679,7 @@ MonoBehaviour:
   spearParent: {fileID: 6576716114690239797}
   cc: {fileID: 6655273678093524158}
   rb: {fileID: 6655273678093524155}
+  tip: {fileID: 0}
 --- !u!1 &6702246422658983325
 GameObject:
   m_ObjectHideFlags: 0

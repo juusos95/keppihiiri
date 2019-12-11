@@ -18,6 +18,7 @@ public class StickJab : MonoBehaviour
             poking = true;
             StartCoroutine(poke(2.0f, 0.08f));
             gamemanager.poke();
+            FindObjectOfType<AudioManager>().Play("StickJab");
 
             /*while (transform.localPosition.x < 1)
             {
