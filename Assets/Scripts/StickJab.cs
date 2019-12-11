@@ -5,6 +5,8 @@ using System;
 public class StickJab : MonoBehaviour
 {
     public bool poking;
+    public Rigidbody rb;
+    public GameManager gamemanager;
 
     private void Update()
     {
@@ -12,6 +14,8 @@ public class StickJab : MonoBehaviour
         {
             StartCoroutine(poke(1.0f, 0.1f));
             poking = true;
+
+            gamemanager.poke();
         }
     }
     IEnumerator poke(float distance, float time)
@@ -25,8 +29,18 @@ public class StickJab : MonoBehaviour
         }
         if (poking)
         {
+            gamemanager.poke();
             poking = false;
             StartCoroutine(poke(0.0f, 0.2f));
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "ground" && poking)
+        {
+            rb.AddRelativeForce(Vector3.right * -50, ForceMode.VelocityChange);
+            Debug.Log("test");
         }
     }
 
