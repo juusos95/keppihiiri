@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Berry : MonoBehaviour
 {
-    bool berryOn;
+    public bool berryOn;
     public GameManager gamemanager;
 
     [SerializeField] Transform spearParent;
@@ -65,7 +65,7 @@ public class Berry : MonoBehaviour
     {
         yield return new WaitForSeconds(push);
         
-        rb.AddRelativeForce(Vector3.forward * 5f);
+        rb.AddRelativeForce(Vector3.right * 50f, ForceMode.Force);
         //rb.velocity = Vector3.right * 15f;
         berryOn = false;
     }
