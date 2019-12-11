@@ -6,7 +6,7 @@ public class StickJab : MonoBehaviour
 {
     public bool poking;
     public Rigidbody rb;
-    public GameManager gamemanager;
+    //public GameManager gamemanager;
 
     private void Update()
     {
@@ -15,7 +15,7 @@ public class StickJab : MonoBehaviour
             StartCoroutine(poke(1.0f, 0.1f));
             poking = true;
 
-            gamemanager.poke();
+            //gamemanager.poke();
         }
     }
     IEnumerator poke(float distance, float time)
@@ -29,7 +29,7 @@ public class StickJab : MonoBehaviour
         }
         if (poking)
         {
-            gamemanager.poke();
+            //gamemanager.poke();
             poking = false;
             StartCoroutine(poke(0.0f, 0.2f));
         }
