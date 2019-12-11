@@ -7,6 +7,12 @@ public class StickJab : MonoBehaviour
     public bool poking;
     public Rigidbody rb;
     public GameManager gamemanager;
+    public float jumpForce;
+    BoxCollider bc;
+    private void Start()
+    {
+        bc = GetComponent<BoxCollider>();
+    }
     private void Update()
     {
         if (Input.GetMouseButtonDown(0) && !poking)
@@ -21,7 +27,9 @@ public class StickJab : MonoBehaviour
         float currentX = transform.localPosition.x;
         for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / time)
         {
-            transform.localPosition = new Vector3(Mathf.Lerp(currentX, distance, t), 0, 0);
+            transform.localPosition = new Vector3(Mathf.Lerp(currentX, distance * 1.2f, t), 0, 0);
+            bc.size = new Vector3(Mathf.Lerp(currentX, distance, t), 0.4f, 0.4f);
+            bc.center = new Vector3(Mathf.Lerp(currentX, distance, t), 0, 0);
             yield return null;
         }
         if (poking)
@@ -31,11 +39,12 @@ public class StickJab : MonoBehaviour
             StartCoroutine(poke(0.0f, 0.2f));
         }
     }
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "ground" && poking)
         {
-            rb.AddRelativeForce(Vector3.right * -50, ForceMode.VelocityChange);
+            rb.AddRelativeForce(Vector3.right * -jumpForce, ForceMode.VelocityChange);
+            Debug.Log("test");
         }
     }
     /*IEnumerator Jab()
