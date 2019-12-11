@@ -9,6 +9,7 @@ public class spearControl : MonoBehaviour
     ConfigurableJoint cj;
     public float anchorX;
     public float anchorY;
+    public float spearZ;
 
     int wallMask;
     float camRayLength = 100;
@@ -28,7 +29,7 @@ public class spearControl : MonoBehaviour
     {
         rotateSpear();
 
-        transform.position = new Vector3(transform.position.x, transform.position.y, -3.5f);
+        transform.position = new Vector3(transform.position.x, transform.position.y, spearZ);
     }
 
     void rotateSpear()
