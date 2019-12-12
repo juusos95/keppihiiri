@@ -20,6 +20,7 @@ public class StickJab : MonoBehaviour
             StartCoroutine(poke(1.0f, 0.1f));
             poking = true;
             gamemanager.poke();
+            FindObjectOfType<AudioManager>().Play("StickJab");
         }
     }
     IEnumerator poke(float distance, float time)
