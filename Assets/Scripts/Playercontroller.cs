@@ -8,6 +8,7 @@ public class Playercontroller : MonoBehaviour
     private float moveInput;
 
     private Rigidbody rb;
+    public Animator anim;
 
     void Start()
     {
@@ -16,7 +17,8 @@ public class Playercontroller : MonoBehaviour
 
     private void FixedUpdate()
     {
+        anim.SetFloat("speed", rb.velocity.x);
         moveInput = Input.GetAxisRaw("Horizontal");
-        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        transform.position += new Vector3(moveInput * speed * Time.deltaTime, 0, 0);
     }
 }

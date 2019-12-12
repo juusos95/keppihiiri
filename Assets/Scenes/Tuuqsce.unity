@@ -704,6 +704,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22b44ba0756ba8840b6c7b3ba62c092b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  berryOn: 0
   gamemanager: {fileID: 1209957674816274505}
   spearParent: {fileID: 593552500761440181}
   cc: {fileID: 902876294}
@@ -2764,6 +2765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12
+  anim: {fileID: 1554570195449826522}
 --- !u!114 &5920553166561837370
 MonoBehaviour:
   m_ObjectHideFlags: 0
