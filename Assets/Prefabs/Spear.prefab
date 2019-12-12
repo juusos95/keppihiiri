@@ -237,6 +237,8 @@ MonoBehaviour:
   anchorX: 0
   anchorY: 0
   spearZ: -2.9
+  anim: {fileID: 0}
+  player: {fileID: 0}
   toMouse: {x: 0, y: 0, z: 0}
 --- !u!1 &7147045698963966129
 GameObject:
@@ -253,7 +255,7 @@ GameObject:
   - component: {fileID: 1157008545190413355}
   m_Layer: 0
   m_Name: spear
-  m_TagString: Spear
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
