@@ -793,7 +793,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: d57845b9787b1ac4daba73d92b7e92cb, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8396226, g: 0.8396226, b: 0.8396226, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3190,6 +3190,8 @@ MonoBehaviour:
   anchorX: 0
   anchorY: 0
   spearZ: 0
+  anim: {fileID: 0}
+  player: {fileID: 0}
   toMouse: {x: 0, y: 0, z: 0}
 --- !u!153 &6576716114690239795
 ConfigurableJoint:
@@ -3332,6 +3334,7 @@ MonoBehaviour:
   poking: 0
   rb: {fileID: 0}
   gamemanager: {fileID: 0}
+  jumpForce: 0
 --- !u!65 &6576716115034577788
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4147,6 +4150,8 @@ MonoBehaviour:
   anchorX: 0
   anchorY: 0
   spearZ: -2.9
+  anim: {fileID: 0}
+  player: {fileID: 0}
   toMouse: {x: 0, y: 0, z: 0}
 --- !u!1 &8975363826901391578
 GameObject:
@@ -4213,6 +4218,7 @@ MonoBehaviour:
   poking: 0
   rb: {fileID: 8975363826901391583}
   gamemanager: {fileID: 7862696060890327053}
+  jumpForce: 0
 --- !u!65 &8975363827376524543
 BoxCollider:
   m_ObjectHideFlags: 0
