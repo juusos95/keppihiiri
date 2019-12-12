@@ -9,6 +9,9 @@ public class spearControl : MonoBehaviour
     ConfigurableJoint cj;
     public float anchorX;
     public float anchorY;
+    public float spearZ;
+    public Animator anim;
+    public GameObject player;
 
     int wallMask;
     float camRayLength = 100;
@@ -28,7 +31,23 @@ public class spearControl : MonoBehaviour
     {
         rotateSpear();
 
-        transform.position = new Vector3(transform.position.x, transform.position.y, -3.5f);
+        transform.position = new Vector3(transform.position.x, transform.position.y, spearZ);
+
+        if (angle < 90 && angle > -90)
+        {
+            anim.SetBool("isRight", true);
+            Vector3 Scaler = transform.localScale;
+            Scaler.x = 1;
+            player.transform.localScale = Scaler;
+
+        }
+        else
+        {
+            anim.SetBool("isRight", false);
+            Vector3 Scaler = transform.localScale;
+            Scaler.x = -1;
+            player.transform.localScale = Scaler;
+        }
     }
 
     void rotateSpear()
