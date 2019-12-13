@@ -2138,6 +2138,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7111549085405266335}
   m_Mesh: {fileID: -5495902117074765545, guid: eb0e09068e2e7e94a933878ff499221c, type: 3}
+--- !u!64 &3008412472042882490
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4852467447980610142}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -5495902117074765545, guid: 5652aa154068a5844ab28bf306f2da94, type: 3}
 --- !u!137 &3055412909621129530
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -2906,6 +2920,7 @@ GameObject:
   - component: {fileID: 8434174166341591117}
   - component: {fileID: 601004088445770363}
   - component: {fileID: 6587564916194272898}
+  - component: {fileID: 3008412472042882490}
   m_Layer: 0
   m_Name: Ground block07 (2)
   m_TagString: ground
