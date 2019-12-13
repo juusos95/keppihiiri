@@ -26,7 +26,7 @@ public class frogController : MonoBehaviour
         }
         else if (aggro && player.position.x > transform.position.x && !goBack && grounded)
         {
-            transform.position = new Vector3(transform.position.x + 1.5f * Time.deltaTime, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + 2f * Time.deltaTime, transform.position.y, transform.position.z);
         }
     }
 
@@ -51,7 +51,7 @@ public class frogController : MonoBehaviour
     {
         if (other.gameObject.tag == "goBack" && player.position.x < transform.position.x && grounded)
         {
-            transform.position = new Vector3(transform.position.x + 1.5f * Time.deltaTime, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + 2f * Time.deltaTime, transform.position.y, transform.position.z);
             goBack = true;
         }
         else if (other.gameObject.tag == "goBack" && player.position.x > transform.position.x && grounded)
