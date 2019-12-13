@@ -33,7 +33,7 @@ public class spearControl : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x, transform.position.y, spearZ);
 
-        if (angle < 90 && angle > -90)
+        /*if (angle < 90 && angle > -90)
         {
             anim.SetBool("isRight", true);
             Vector3 Scaler = transform.localScale;
@@ -47,7 +47,7 @@ public class spearControl : MonoBehaviour
             Vector3 Scaler = transform.localScale;
             Scaler.x = -1;
             player.transform.localScale = Scaler;
-        }
+        }*/
     }
 
     void rotateSpear()
