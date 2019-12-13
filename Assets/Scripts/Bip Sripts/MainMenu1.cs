@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu1 : MonoBehaviour
 {
+    [SerializeField] GameObject playButton;
+    [SerializeField] GameObject creditsButton;
+    [SerializeField] GameObject quitButton;
+    [SerializeField] GameObject backButton;
+
     public void PlayGame()
     {
         SceneManager.GetActiveScene();
@@ -15,5 +20,22 @@ public class MainMenu1 : MonoBehaviour
     {
         Debug.Log("QUIT!");
         Application.Quit();
+    }
+
+    public void Credits()
+    {
+        Debug.Log("F");
+        playButton.transform.localPosition = new Vector3(10000, 0, 0);
+        creditsButton.transform.localPosition = new Vector3(10000, 0, 0);
+        quitButton.transform.localPosition = new Vector3(10000, 0, 0);
+        backButton.transform.localPosition = new Vector3(378, -29, 0);
+    }
+    
+    public void Back()
+    {
+        playButton.transform.localPosition = new Vector3(16.04f, 130, 0);
+        creditsButton.transform.localPosition = new Vector3(16.04f, -10, 0);
+        quitButton.transform.localPosition = new Vector3(16.04f, -150, 0);
+        backButton.transform.localPosition = new Vector3(10000, 0, 0);
     }
 }
