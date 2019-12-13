@@ -6,13 +6,13 @@ using UnityEngine;
 public class spearTip : MonoBehaviour
 {
 
-    private float disablecollider = 0f;
+    /*private float disablecollider = 0f;
 
     private float enablecollider = 0.5f;
-    public BoxCollider bc;
+    public BoxCollider bc;*/
     [SerializeField] Transform spearParent;
 
-    void OnTriggerStay(Collider other)
+    /*void OnTriggerStay(Collider other)
     {
         if (Input.GetMouseButtonDown(0) && other.gameObject.tag == "Berri")
         {
@@ -21,13 +21,13 @@ public class spearTip : MonoBehaviour
             //StartCoroutine(DisableCollider());
             StartCoroutine(Enable());
         }
-    }
+    }*/
     private void FixedUpdate()
     {
         transform.rotation = spearParent.rotation;
     }
 
-    IEnumerator DisableCollider()
+    /*IEnumerator DisableCollider()
     {
         yield return new WaitForSeconds(disablecollider);
 
@@ -39,5 +39,5 @@ public class spearTip : MonoBehaviour
         yield return new WaitForSeconds(enablecollider);
         bc.enabled = true;
         Debug.Log("poke3");
-    }
+    }*/
 }

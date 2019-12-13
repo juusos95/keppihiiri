@@ -1,12 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Berry : MonoBehaviour
 {
-    bool berryOn;
+    public bool berryOn;
     public GameManager gamemanager;
-
     [SerializeField] Transform spearParent;
     private float destroy = 0.0f;
     private float push = 0.1f;
@@ -15,10 +13,9 @@ public class Berry : MonoBehaviour
     FixedJoint fj;
     Transform temp;
     public BoxCollider tip;
-
     private void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "Spear"&&collider.GetComponent<BoxCollider>() && !berryOn && gamemanager.poking)
+        if (collider.gameObject.tag == "Spear" && collider.GetComponent<BoxCollider>() && !berryOn && gamemanager.poking)
         {
             cc.enabled = false;
             fj = gameObject.AddComponent(typeof(FixedJoint)) as FixedJoint;
@@ -38,19 +35,12 @@ public class Berry : MonoBehaviour
         }
         else if (Input.GetMouseButtonDown(0) && GetComponent<FixedJoint>())  //Detach berry from spear
         {
-
             StartCoroutine(Kill());
-
-
-           
         }
-
     }
-
     IEnumerator Kill()
     {
         yield return new WaitForSeconds(destroy);
-
         cc.enabled = true;
         Destroy(GetComponent<FixedJoint>());
         Physics.IgnoreCollision(tip.GetComponent<BoxCollider>(), cc.GetComponent<SphereCollider>());
@@ -64,8 +54,7 @@ public class Berry : MonoBehaviour
     IEnumerator Push()
     {
         yield return new WaitForSeconds(push);
-        
-        rb.AddRelativeForce(Vector3.forward * 5f);
+        rb.AddRelativeForce(Vector3.right * 50f, ForceMode.Force);
         //rb.velocity = Vector3.right * 15f;
         berryOn = false;
     }
