@@ -20,6 +20,7 @@ public class frogController : MonoBehaviour
     {
         anim.SetBool("goBack", goBack);
         anim.SetBool("aggro", aggro);
+        anim.SetBool("jump", grounded);
         /*if (player.position.x < transform.position.x - 15 || player.position.x > transform.position.x + 15)
         {
             Debug.Log("hei");
