@@ -8,7 +8,7 @@ public class bugController : MonoBehaviour
     public bool attacking;
     public bool grounded;
     Rigidbody rb;
-    float attackForce = 100;
+    float attackForce = 500;
 
     public Transform player;
     Animator anim;

@@ -471,12 +471,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 853491592}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9e7c98bc98918649aadcca1edc891eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b933f3ba39026a409a1d945b4525178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggro: 0
-  grounded: 0
-  goBack: 0
   player: {fileID: 5920553166561837378}
 --- !u!54 &853491594
 Rigidbody:
@@ -486,7 +483,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853491592}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -783,11 +780,23 @@ Rigidbody:
   m_Mass: 10
   m_Drag: 0
   m_AngularDrag: 0.05
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!114 &1263354870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263354864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d573769be4b12ae4fabdf3f2e737acfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1264227734
 GameObject:
   m_ObjectHideFlags: 0
