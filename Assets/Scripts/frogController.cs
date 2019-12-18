@@ -9,24 +9,30 @@ public class frogController : MonoBehaviour
     public bool goBack;
     Rigidbody rb;
     [SerializeField] Transform player;
+    Animator anim;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
+        anim.SetBool("goBack", goBack);
+        anim.SetBool("aggro", aggro);
         /*if (player.position.x < transform.position.x - 15 || player.position.x > transform.position.x + 15)
         {
             Debug.Log("hei");
         }*/
         if (aggro && player.position.x < transform.position.x && !goBack && grounded)
         {
-            transform.position = new Vector3(transform.position.x + 1.5f * -Time.deltaTime, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + 2f * -Time.deltaTime, transform.position.y, transform.position.z);
+            transform.localScale = new Vector3(1, 1, 1);
         }
         else if (aggro && player.position.x > transform.position.x && !goBack && grounded)
         {
             transform.position = new Vector3(transform.position.x + 2f * Time.deltaTime, transform.position.y, transform.position.z);
+            transform.localScale = new Vector3(1, 1, -1);
         }
     }
 
@@ -51,12 +57,14 @@ public class frogController : MonoBehaviour
     {
         if (other.gameObject.tag == "goBack" && player.position.x < transform.position.x && grounded)
         {
-            transform.position = new Vector3(transform.position.x + 2f * Time.deltaTime, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + 1.5f * Time.deltaTime, transform.position.y, transform.position.z);
+            transform.localScale = new Vector3(1, 1, 1);
             goBack = true;
         }
         else if (other.gameObject.tag == "goBack" && player.position.x > transform.position.x && grounded)
         {
             transform.position = new Vector3(transform.position.x + -1.5f * Time.deltaTime, transform.position.y, transform.position.z);
+            transform.localScale = new Vector3(1, 1, -1);
             goBack = true;
         }
     }
