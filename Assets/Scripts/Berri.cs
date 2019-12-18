@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class Berry : MonoBehaviour
+public class Berri : MonoBehaviour
 {
     public bool berryOn;
     public GameManager gm;
@@ -31,14 +31,13 @@ public class Berry : MonoBehaviour
             FixedJoint fj = gameObject.AddComponent<FixedJoint>();
             fj.connectedBody = other.gameObject.GetComponent<Rigidbody>();
             fj.connectedMassScale = 0;
-            transform.SetParent(spearParent);
         }
     }
     private void detachBerry()
     {
         berryOn = false;
+        transform.rotation = spearParent.rotation;
         Destroy(GetComponent<FixedJoint>());
-        rb.AddExplosionForce(500, spearParent.position, 50);
-        transform.SetParent(null);
+        rb.AddRelativeForce(7, 0, 0, ForceMode.VelocityChange);
     }
 }

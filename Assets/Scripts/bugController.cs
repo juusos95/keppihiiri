@@ -8,15 +8,16 @@ public class bugController : MonoBehaviour
     public bool attacking;
     public bool grounded;
     Rigidbody rb;
-    Collider collider;
+    float attackForce = 100;
 
     public Transform player;
+    Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        collider = GetComponent<Collider>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -37,32 +38,32 @@ public class bugController : MonoBehaviour
         if (other.gameObject.tag == "aggroCheck" && !attacking && player.transform.position.x < transform.position.x)
         {
             aggro = true;
-            StartCoroutine(prepare(-75, 2.25f));
+            StartCoroutine(prepare(-attackForce, 2f));
         }
         else if (other.gameObject.tag == "aggroCheck" && !attacking && player.transform.position.x > transform.position.x)
         {
             aggro = true;
-            StartCoroutine(prepare(75, 2.25f));
+            StartCoroutine(prepare(attackForce, 2f));
         }
         else if (other.gameObject.tag == "jumpCheck" && !attacking && player.transform.position.x < transform.position.x)
         {
             aggro = true;
-            StartCoroutine(prepare(-75, 2f));
+            StartCoroutine(prepare(-attackForce, 1.75f));
         }
         else if (other.gameObject.tag == "jumpCheck" && !attacking && player.transform.position.x > transform.position.x)
         {
             aggro = true;
-            StartCoroutine(prepare(75, 2f));
+            StartCoroutine(prepare(attackForce, 1.75f));
         }
         else if (other.gameObject.tag == "goBack" && !attacking && player.transform.position.x < transform.position.x)
         {
             aggro = true;
-            StartCoroutine(prepare(-75, 1.75f));
+            StartCoroutine(prepare(-attackForce, 1.5f));
         }
         else if (other.gameObject.tag == "goBack" && !attacking && player.transform.position.x > transform.position.x)
         {
             aggro = true;
-            StartCoroutine(prepare(75, 1.75f));
+            StartCoroutine(prepare(attackForce, 1.5f));
         }
     }
 
@@ -91,19 +92,29 @@ public class bugController : MonoBehaviour
     }
     IEnumerator prepare(float charge, float time)
     {
-        yield return new WaitForSeconds(1);
+        attacking = true;
+        yield return new WaitForSeconds(1.5f);
+        if(charge < 0)
+        {
+            transform.localScale = new Vector3(1, 1, -1);
+        }
+        else if (charge > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
         StartCoroutine(attack(charge, time));
     }
 
     IEnumerator attack(float charge, float time)
     {
-        attacking = true;
         float currentX = transform.localPosition.x;
+        anim.SetBool("attacking", true);
         for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / time)
         {
             rb.AddForce(charge, 0, 0);
             yield return null;
         }
+        anim.SetBool("attacking", false);
         StartCoroutine(stop());
     }
 
@@ -119,8 +130,8 @@ public class bugController : MonoBehaviour
     {
         rb.velocity = new Vector3(0, rb.velocity.y);
         yield return new WaitForSeconds(1.5f);
-        collider.enabled = false;
+        GetComponent<Collider>().enabled = false;
         attacking = false;
-        collider.enabled = true;
+        GetComponent<Collider>().enabled = true;
     }
 }
