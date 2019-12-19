@@ -11,7 +11,9 @@ public class frogController : MonoBehaviour
     bool aggro;
     bool goBack;
     bool grounded;
+    int hp = 2;
     Animator anim;
+    public GameManager gm;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,10 @@ public class frogController : MonoBehaviour
         anim.SetBool("goBack", goBack);
         anim.SetBool("aggro", aggro);
         anim.SetBool("jump", grounded);
+        if (hp <= 0)
+        {
+            Destroy(gameObject);
+        }
         if (transform.position.x < player.position.x)
         {
             backSpeed = -2;
@@ -56,6 +62,12 @@ public class frogController : MonoBehaviour
         if (other.gameObject.tag == "ground")
         {
             grounded = true;
+        }
+        if (other.gameObject.tag == "Spear" && gm.poking)
+        {
+            hp -= 1;
+            frog.AddExplosionForce(6000, player.position, 5000);
+            Debug.Log("aoiliholuigb");
         }
     }
     private void OnTriggerExit(Collider other)
