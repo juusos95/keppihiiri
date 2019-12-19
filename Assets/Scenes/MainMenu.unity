@@ -852,17 +852,17 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Art, Management, Programming
+  m_Text: 'Art, Management, Programming, Level Design, Game Desing
 
-    Programming, Sound
+    Programming, Sound, Game Desing
 
-    Programming, 3D art
+    Programming, 3D art, Animation, Game Desing
 
-    Programming
+    Programming, Game Desing
 
-    Level Desing
+    Level Design, Game Desing
 
-    Programming assist, 3D art, Animation
+    Programming Assist, 3D art, Animation, Game Desing
 
 '
 --- !u!222 &1041597131
