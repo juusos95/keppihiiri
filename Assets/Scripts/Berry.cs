@@ -15,13 +15,10 @@ public class Berry : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && berryOn)
         {
-<<<<<<< HEAD
             HealthController.health += 20f;
             FindObjectOfType<AudioManager>().Play("Eat");
             Destroy(gameObject);
-=======
             detachBerry();
->>>>>>> master
         }
         else if (Input.GetKey("e") && berryOn)
         {
