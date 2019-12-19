@@ -15,7 +15,6 @@ public class Berry : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && berryOn)
         {
-            Destroy(gameObject);
             detachBerry();
         }
         else if (Input.GetKey("e") && berryOn)
