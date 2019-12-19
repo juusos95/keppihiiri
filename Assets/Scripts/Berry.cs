@@ -40,6 +40,6 @@ public class Berry : MonoBehaviour
         transform.rotation = spearParent.rotation;
         Destroy(GetComponent<FixedJoint>());
         rb.constraints = RigidbodyConstraints.None;
-        rb.AddRelativeForce(7, 0, 0, ForceMode.VelocityChange);
+        rb.AddExplosionForce(500, spearParent.position, 500);
     }
 }
