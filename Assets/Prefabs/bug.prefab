@@ -574,7 +574,10 @@ Transform:
   - {fileID: 8208313930310770854}
   - {fileID: 5779587739906147658}
   - {fileID: 8697125579714849196}
+<<<<<<< HEAD
   - {fileID: 1181381989685122693}
+=======
+>>>>>>> master
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -654,6 +657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d573769be4b12ae4fabdf3f2e737acfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 --- !u!1 &2453858171559480331
 GameObject:
   m_ObjectHideFlags: 0
@@ -5467,6 +5471,8 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+=======
+>>>>>>> master
 --- !u!1 &2582972091229353414
 GameObject:
   m_ObjectHideFlags: 0
@@ -5699,7 +5705,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gm: {fileID: 0}
+<<<<<<< HEAD
   hp: 6
+=======
+>>>>>>> master
 --- !u!1 &3473154451442155919
 GameObject:
   m_ObjectHideFlags: 0

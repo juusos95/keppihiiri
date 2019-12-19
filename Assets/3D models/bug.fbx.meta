@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 6eb39b64e3294cf43b96644b594edf8d
+=======
+guid: 2650723c419dc85469fb17a01cf77201
+>>>>>>> master
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable:
@@ -39,6 +43,7 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
+<<<<<<< HEAD
     clipAnimations:
     - serializedVersion: 16
       name: Armature|idle
@@ -98,6 +103,9 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
+=======
+    clipAnimations: []
+>>>>>>> master
     isReadable: 0
   meshes:
     lODScreenPercentages: []
