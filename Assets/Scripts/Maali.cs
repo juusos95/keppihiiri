@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Maali : MonoBehaviour
 {
+
+    public Animator animator;
     [SerializeField] private bool loadSceneByName = false;
     [SerializeField] private int levelToLoad = 0;
     public float finishDelay = 1f;
@@ -14,6 +16,7 @@ public class Maali : MonoBehaviour
         if (!loadSceneByName && other.gameObject.tag == "MaaliCheck")
         {
             Time.timeScale = 1f;
+            animator.Play("Fadein");
             Invoke("Finish", finishDelay);
         }
     }

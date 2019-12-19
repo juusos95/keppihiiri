@@ -6,14 +6,23 @@ using UnityEngine.SceneManagement;
 public class respawntrigger : MonoBehaviour
 {
 
+    public Animator animator;
+    public float deathdelay = 1f;
+
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "Player")
         {
-
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            animator.Play("Fadein");
+            Invoke("Death", deathdelay);
         }
     }
 
-    
+    void Death()
+    {
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+
 }
