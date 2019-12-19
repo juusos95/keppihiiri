@@ -129,7 +129,7 @@ public class bugController : MonoBehaviour
     IEnumerator stop()
     {
         rb.velocity = new Vector3(0, rb.velocity.y);
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         GetComponent<Collider>().enabled = false;
         attacking = false;
         GetComponent<Collider>().enabled = true;
