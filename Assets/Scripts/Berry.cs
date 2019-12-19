@@ -1,80 +1,49 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Berry : MonoBehaviour
 {
     public bool berryOn;
-    public GameManager gamemanager;
-
-    [SerializeField] Transform spearParent;
-    private float destroy = 0.0f;
-    private float push = 0.1f;
-    public SphereCollider cc;
-    public Rigidbody rb;
-    FixedJoint fj;
-    Transform temp;
-    public BoxCollider tip;
-
-    private void OnTriggerEnter(Collider collider)
+    public GameManager gm;
+    public Transform spearParent;
+    Rigidbody rb;
+    private void Start()
     {
-        if (collider.gameObject.tag == "Spear"&&collider.GetComponent<BoxCollider>() && !berryOn && gamemanager.poking)
-        {
-            cc.enabled = false;
-            fj = gameObject.AddComponent(typeof(FixedJoint)) as FixedJoint;
-            rb = collider.gameObject.GetComponentInParent(typeof(Rigidbody)) as Rigidbody;
-            fj.connectedBody = rb;
-            fj.connectedMassScale = 0;
-            berryOn = true;
-            Debug.Log("Berry is attached");
-        }
+        rb = GetComponent<Rigidbody>();
     }
     private void Update()
     {
-        if (Input.GetKey("e") && GetComponent<FixedJoint>() && berryOn)            //Eat berry that is stuck on the spear
+        if (Input.GetMouseButtonDown(0) && berryOn)
         {
+<<<<<<< HEAD
             HealthController.health += 20f;
             FindObjectOfType<AudioManager>().Play("Eat");
             Destroy(gameObject);
+=======
+            detachBerry();
+>>>>>>> master
         }
-        else if (Input.GetMouseButtonDown(0) && GetComponent<FixedJoint>())  //Detach berry from spear
+        else if (Input.GetKey("e") && berryOn)
         {
-
-            StartCoroutine(Kill());
-
-
-           
+            HealthController.health += 20f;
+            Destroy(gameObject);
         }
-
     }
-
-    IEnumerator Kill()
+    private void OnTriggerEnter(Collider other)
     {
-        yield return new WaitForSeconds(destroy);
-
-        cc.enabled = true;
-        Destroy(GetComponent<FixedJoint>());
-        Physics.IgnoreCollision(tip.GetComponent<BoxCollider>(), cc.GetComponent<SphereCollider>());
-        //temp = gameObject.transform.parent;
-        //gameObject.transform.parent = spearParent.transform;
+        if (other.gameObject.tag == "Spear" && gm.poking && !berryOn)
+        {
+            berryOn = true;
+            FixedJoint fj = gameObject.AddComponent<FixedJoint>();
+            fj.connectedBody = other.gameObject.GetComponent<Rigidbody>();
+            fj.connectedMassScale = 0;
+        }
+    }
+    private void detachBerry()
+    {
+        berryOn = false;
         transform.rotation = spearParent.rotation;
-        berryOn = false;
-        StartCoroutine(Push());
-        //gameObject.transform.parent = temp;
+        Destroy(GetComponent<FixedJoint>());
+        rb.AddRelativeForce(7, 0, 0, ForceMode.VelocityChange);
     }
-    IEnumerator Push()
-    {
-        yield return new WaitForSeconds(push);
-        
-        rb.AddRelativeForce(Vector3.right * 50f, ForceMode.Force);
-        //rb.velocity = Vector3.right * 15f;
-        berryOn = false;
-    }
-    /*private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            collider.transform.parent = null;
-        }
-    }*/
 }
