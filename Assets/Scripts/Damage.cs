@@ -10,6 +10,7 @@ public class Damage : MonoBehaviour
         if (collider.gameObject.tag == "Player" && collider.GetComponent<CapsuleCollider>())
         {
             HealthController.health -= 20f;
+            FindObjectOfType<AudioManager>().Play("PlayerDamage");
         }
     }
 }

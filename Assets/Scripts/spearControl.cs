@@ -37,7 +37,7 @@ public class spearControl : MonoBehaviour
         {
             anim.SetBool("isRight", true);
             Vector3 Scaler = transform.localScale;
-            Scaler.x = 1;
+            Scaler.z = 1;
             player.transform.localScale = Scaler;
 
         }
@@ -45,7 +45,7 @@ public class spearControl : MonoBehaviour
         {
             anim.SetBool("isRight", false);
             Vector3 Scaler = transform.localScale;
-            Scaler.x = -1;
+            Scaler.z = -1;
             player.transform.localScale = Scaler;
         }*/
     }
