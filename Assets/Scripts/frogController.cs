@@ -1,104 +1,66 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class frogController : MonoBehaviour
 {
-    public bool aggro;
-    public bool grounded;
-    public bool goBack;
-    Rigidbody rb;
-    [SerializeField] Transform player;
+    public Transform player;
+    float speed = 5;
+    float backSpeed = 3.5f;
+    Rigidbody frog;
+    Vector3 jumpForce;
+    bool aggro;
+    bool goBack;
+    bool grounded;
     Animator anim;
+    // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        frog = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
     }
-
-    void FixedUpdate()
+    private void Update()
     {
         anim.SetBool("goBack", goBack);
         anim.SetBool("aggro", aggro);
         anim.SetBool("jump", grounded);
-        /*if (player.position.x < transform.position.x - 15 || player.position.x > transform.position.x + 15)
+        if (transform.position.x < player.position.x)
         {
-            Debug.Log("hei");
-        }*/
-        if (aggro && player.position.x < transform.position.x && !goBack && grounded)
-        {
-            transform.position = new Vector3(transform.position.x + 2f * -Time.deltaTime, transform.position.y, transform.position.z);
-            transform.localScale = new Vector3(1, 1, 1);
+            backSpeed = -2;
+            jumpForce = new Vector3(5000, 4000, 0);
         }
-        else if (aggro && player.position.x > transform.position.x && !goBack && grounded)
+        else if (transform.position.x > player.position.x)
         {
-            transform.position = new Vector3(transform.position.x + 2f * Time.deltaTime, transform.position.y, transform.position.z);
-            transform.localScale = new Vector3(1, 1, -1);
-        }
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "jumpCheck" && player.position.x < transform.position.x)
-        {
-            rb.AddForce(new Vector3(0, 400, 0));
-        }
-
-        else if (other.gameObject.tag == "jumpCheck" && player.position.x > transform.position.x)
-        {
-            rb.AddForce(new Vector3(0, 400, 0));
-        }
-
-        else if (other.gameObject.tag == "aggroCheck")
-        {
-            aggro = true;
+            backSpeed = 2;
+            jumpForce = new Vector3(-5000, 4000, 0);
         }
     }
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "goBack" && player.position.x < transform.position.x && grounded)
-        {
-            transform.position = new Vector3(transform.position.x + 1.5f * Time.deltaTime, transform.position.y, transform.position.z);
-            transform.localScale = new Vector3(1, 1, 1);
-            goBack = true;
-        }
-        else if (other.gameObject.tag == "goBack" && player.position.x > transform.position.x && grounded)
-        {
-            transform.position = new Vector3(transform.position.x + -1.5f * Time.deltaTime, transform.position.y, transform.position.z);
-            transform.localScale = new Vector3(1, 1, -1);
-            goBack = true;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "jumpCheck" && !grounded && player.position.x < transform.position.x)
-        {
-            rb.velocity = new Vector3(-10, rb.velocity.y, 0);
-        }
-        else if (other.gameObject.tag == "jumpCheck" && !grounded && player.position.x > transform.position.x)
-        {
-            rb.velocity = new Vector3(10, rb.velocity.y, 0);
-        }
-
         if (other.gameObject.tag == "aggroCheck")
         {
-            aggro = false;
+            transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            aggro = true;
         }
-        if (other.gameObject.tag == "goBack")
+        else if (other.gameObject.tag == "goBack")
         {
-            goBack = false;
+            transform.position = new Vector3(transform.position.x + backSpeed * Time.deltaTime, transform.position.y, transform.position.z);
+            goBack = true;
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.tag == "ground")
+        if (other.gameObject.tag == "jumpCheck")
+        {
+            frog.AddForce(jumpForce);
+        }
+        if (other.gameObject.tag == "ground")
         {
             grounded = true;
         }
     }
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.collider.tag == "ground")
+        if (other.gameObject.tag == "ground")
         {
             grounded = false;
         }
