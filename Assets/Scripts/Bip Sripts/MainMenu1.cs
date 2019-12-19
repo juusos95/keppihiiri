@@ -10,10 +10,27 @@ public class MainMenu1 : MonoBehaviour
     [SerializeField] GameObject quitButton;
     [SerializeField] GameObject backButton;
 
+    public Animator animator;
+    public Animator animator2;
+    public Animator animator3;
+    public Animator animator4;
+
+    public float startDelay = 1f;
+
     public void PlayGame()
     {
+        Invoke("Startup", startDelay);
+        animator.Play("Fadein");
+        animator2.Play("off");
+        animator3.Play("off");
+        animator4.Play("off");
+
+    }
+
+    void Startup()
+    {
         SceneManager.GetActiveScene();
-        SceneManager.LoadScene(+ 1);
+        SceneManager.LoadScene(+1);
     }
 
     public void QuitGame ()
