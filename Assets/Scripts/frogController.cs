@@ -11,7 +11,7 @@ public class frogController : MonoBehaviour
     bool aggro;
     bool goBack;
     bool grounded;
-    int hp = 2;
+    public int hp = 6;
     Animator anim;
     public GameManager gm;
     // Start is called before the first frame update
@@ -32,12 +32,12 @@ public class frogController : MonoBehaviour
         if (transform.position.x < player.position.x)
         {
             backSpeed = -2;
-            jumpForce = new Vector3(5000, 4000, 0);
+            jumpForce = new Vector3(500, 400, 0);
         }
         else if (transform.position.x > player.position.x)
         {
             backSpeed = 2;
-            jumpForce = new Vector3(-5000, 4000, 0);
+            jumpForce = new Vector3(-500, 400, 0);
         }
     }
     private void OnTriggerStay(Collider other)
@@ -52,6 +52,12 @@ public class frogController : MonoBehaviour
             transform.position = new Vector3(transform.position.x + backSpeed * Time.deltaTime, transform.position.y, transform.position.z);
             goBack = true;
         }
+
+        if (other.gameObject.tag == "Spear" && gm.poking)
+        {
+            hp -= 1;
+            frog.AddExplosionForce(200, player.position, 500 / 3);
+        }
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -62,12 +68,6 @@ public class frogController : MonoBehaviour
         if (other.gameObject.tag == "ground")
         {
             grounded = true;
-        }
-        if (other.gameObject.tag == "Spear" && gm.poking)
-        {
-            hp -= 1;
-            frog.AddExplosionForce(6000, player.position, 5000);
-            Debug.Log("aoiliholuigb");
         }
     }
     private void OnTriggerExit(Collider other)
