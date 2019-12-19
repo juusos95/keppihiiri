@@ -18,12 +18,12 @@ public class Playercontroller : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //anim.SetFloat("speed", rb.velocity.x);
+        anim.SetFloat("speed", rb.velocity.x);
         moveInput = Input.GetAxisRaw("Horizontal");
         transform.position += new Vector3(moveInput * speed * Time.deltaTime, 0, 0);
     }
 
-    /*private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "ground" && collision.gameObject.GetComponent<CapsuleCollider>())
         {
@@ -37,5 +37,5 @@ public class Playercontroller : MonoBehaviour
         {
             anim.SetBool("ground", false);
         }
-    }*/
+    }
 }
