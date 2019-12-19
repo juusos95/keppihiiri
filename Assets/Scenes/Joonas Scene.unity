@@ -501,6 +501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
+  gamemanager: {fileID: 7862696060890327053}
 --- !u!1 &403128875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1920,9 +1921,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e7c98bc98918649aadcca1edc891eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggro: 0
-  grounded: 0
-  goBack: 0
   player: {fileID: 732258369095138479}
 --- !u!54 &2061824889073060950
 Rigidbody:

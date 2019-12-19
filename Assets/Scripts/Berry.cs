@@ -21,6 +21,7 @@ public class Berry : MonoBehaviour
         else if (Input.GetKey("e") && berryOn)
         {
             HealthController.health += 20f;
+            FindObjectOfType<AudioManager>().Play("Eat");
             Destroy(gameObject);
         }
     }

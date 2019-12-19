@@ -8,6 +8,7 @@ public class HealthController : MonoBehaviour
     public Image healthBar;
     float maxHealth = 100f;
     public static float health;
+    public GameManager gamemanager;
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +22,9 @@ public class HealthController : MonoBehaviour
     public void Update ()
     {
         healthBar.fillAmount = health / maxHealth;
+        if (health == 0f)
+        {
+            gamemanager.EndGame();
+        }
     }
 }
