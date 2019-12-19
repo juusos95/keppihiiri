@@ -20,6 +20,7 @@ public class Berry : MonoBehaviour
         else if (Input.GetKey("e") && berryOn)
         {
             HealthController.health += 20f;
+            FindObjectOfType<AudioManager>().Play("Eat");
             Destroy(gameObject);
         }
     }
@@ -31,14 +32,14 @@ public class Berry : MonoBehaviour
             FixedJoint fj = gameObject.AddComponent<FixedJoint>();
             fj.connectedBody = other.gameObject.GetComponent<Rigidbody>();
             fj.connectedMassScale = 0;
-            transform.SetParent(spearParent);
         }
     }
     private void detachBerry()
     {
         berryOn = false;
+        transform.rotation = spearParent.rotation;
         Destroy(GetComponent<FixedJoint>());
-        rb.AddExplosionForce(500, spearParent.position, 50);
-        transform.SetParent(null);
+        rb.constraints = RigidbodyConstraints.None;
+        rb.AddRelativeForce(7, 0, 0, ForceMode.VelocityChange);
     }
 }
