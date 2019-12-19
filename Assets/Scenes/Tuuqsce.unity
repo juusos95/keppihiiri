@@ -1525,9 +1525,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4147047578257301266}
   - component: {fileID: 6271058028972159592}
-  - component: {fileID: 1141130427931389186}
   - component: {fileID: 1141130427931389188}
   - component: {fileID: 1141130427931389187}
+  - component: {fileID: 1141130427931389186}
   m_Layer: 0
   m_Name: Frogger
   m_TagString: Untagged
@@ -1547,9 +1547,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e7c98bc98918649aadcca1edc891eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aggro: 0
-  grounded: 0
-  goBack: 0
   player: {fileID: 5920553166561837378}
 --- !u!136 &1141130427931389187
 CapsuleCollider:
@@ -4504,7 +4501,7 @@ MonoBehaviour:
   anchorY: 0
   spearZ: -2.9
   anim: {fileID: 1554570195449826522}
-  player: {fileID: 5920553166561837368}
+  player: {fileID: 5567481866324284339}
   toMouse: {x: 0, y: 0, z: 0}
 --- !u!1 &5568151269632853278
 GameObject:
