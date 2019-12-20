@@ -9,7 +9,7 @@ public class bugController : MonoBehaviour
     public bool attacking;
     public bool grounded;
     Rigidbody rb;
-    float attackForce = 20;
+    float attackForce = 10;
 
     public Transform player;
     Animator anim;
@@ -94,7 +94,7 @@ public class bugController : MonoBehaviour
     IEnumerator prepare(float charge, float time)
     {
         attacking = true;
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2);
         if(charge < 0)
         {
             transform.localScale = new Vector3(1, 1, -1);
