@@ -54,6 +54,7 @@ public class frogController : MonoBehaviour
         }
         if (other.gameObject.tag == "Spear" && gm.poking)
         {
+            FindObjectOfType<AudioManager>().Play("Frog");
             hp -= 1;
             frog.AddExplosionForce(200, player.position, 500 / 3);
         }
