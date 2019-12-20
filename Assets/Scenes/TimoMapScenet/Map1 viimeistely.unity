@@ -906,7 +906,6 @@ GameObject:
   - component: {fileID: 142982199}
   - component: {fileID: 142982198}
   - component: {fileID: 142982197}
-  - component: {fileID: 142982196}
   - component: {fileID: 142982200}
   m_Layer: 0
   m_Name: Lehti (4)
@@ -915,20 +914,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &142982196
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 142982195}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -8678823145569952518, guid: 3ab887663aec6fa4e969c916cc05e66e, type: 3}
 --- !u!23 &142982197
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1331,7 +1316,6 @@ GameObject:
   - component: {fileID: 239981632}
   - component: {fileID: 239981631}
   - component: {fileID: 239981630}
-  - component: {fileID: 239981629}
   - component: {fileID: 239981633}
   m_Layer: 0
   m_Name: Lehti (3)
@@ -1340,20 +1324,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &239981629
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 239981628}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -8678823145569952518, guid: 3ab887663aec6fa4e969c916cc05e66e, type: 3}
 --- !u!23 &239981630
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4648,7 +4618,6 @@ GameObject:
   - component: {fileID: 826132153}
   - component: {fileID: 826132152}
   - component: {fileID: 826132151}
-  - component: {fileID: 826132150}
   - component: {fileID: 826132154}
   m_Layer: 0
   m_Name: Lehti (6)
@@ -4657,20 +4626,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &826132150
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826132149}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -8678823145569952518, guid: 3ab887663aec6fa4e969c916cc05e66e, type: 3}
 --- !u!23 &826132151
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5117,7 +5072,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -5495902117074765545, guid: 5f6df4bdbdc5fe54d8ffc379872e100a, type: 3}
 --- !u!23 &982569308
@@ -5822,7 +5777,6 @@ GameObject:
   - component: {fileID: 1211710218}
   - component: {fileID: 1211710217}
   - component: {fileID: 1211710216}
-  - component: {fileID: 1211710215}
   - component: {fileID: 1211710219}
   m_Layer: 0
   m_Name: Lehti (7)
@@ -5831,20 +5785,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1211710215
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1211710214}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -8678823145569952518, guid: 3ab887663aec6fa4e969c916cc05e66e, type: 3}
 --- !u!23 &1211710216
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6099,7 +6039,6 @@ GameObject:
   - component: {fileID: 1269365506}
   - component: {fileID: 1269365505}
   - component: {fileID: 1269365504}
-  - component: {fileID: 1269365503}
   - component: {fileID: 1269365507}
   m_Layer: 0
   m_Name: Lehti (1)
@@ -6108,20 +6047,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1269365503
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1269365502}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -8678823145569952518, guid: 3ab887663aec6fa4e969c916cc05e66e, type: 3}
 --- !u!23 &1269365504
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8040,7 +7965,6 @@ GameObject:
   - component: {fileID: 1788845647}
   - component: {fileID: 1788845646}
   - component: {fileID: 1788845645}
-  - component: {fileID: 1788845644}
   - component: {fileID: 1788845648}
   m_Layer: 0
   m_Name: Lehti (2)
@@ -8049,20 +7973,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &1788845644
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1788845643}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -8678823145569952518, guid: 3ab887663aec6fa4e969c916cc05e66e, type: 3}
 --- !u!23 &1788845645
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9243,7 +9153,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -5495902117074765545, guid: 724dc5c9a4b6a4849852d771ba15a0a0, type: 3}
 --- !u!23 &2088100942
@@ -9521,7 +9431,6 @@ GameObject:
   - component: {fileID: 2144616782}
   - component: {fileID: 2144616781}
   - component: {fileID: 2144616780}
-  - component: {fileID: 2144616779}
   - component: {fileID: 2144616783}
   m_Layer: 0
   m_Name: Lehti (5)
@@ -9530,20 +9439,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &2144616779
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2144616778}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -8678823145569952518, guid: 3ab887663aec6fa4e969c916cc05e66e, type: 3}
 --- !u!23 &2144616780
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9799,7 +9694,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -5495902117074765545, guid: 724dc5c9a4b6a4849852d771ba15a0a0, type: 3}
 --- !u!1 &118126564917550909
@@ -11451,7 +11346,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -5495902117074765545, guid: 5f6df4bdbdc5fe54d8ffc379872e100a, type: 3}
 --- !u!4 &1387441927134567362
@@ -15407,7 +15302,6 @@ GameObject:
   - component: {fileID: 8482268933743919460}
   - component: {fileID: 642910941929569106}
   - component: {fileID: 6615960970510960555}
-  - component: {fileID: 4894369906339197816}
   - component: {fileID: 4894369906339197817}
   m_Layer: 0
   m_Name: Lehti
@@ -15416,20 +15310,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!64 &4894369906339197816
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4894369906339197815}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -8678823145569952518, guid: 3ab887663aec6fa4e969c916cc05e66e, type: 3}
 --- !u!65 &4894369906339197817
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16079,7 +15959,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -5495902117074765545, guid: 5f6df4bdbdc5fe54d8ffc379872e100a, type: 3}
 --- !u!1 &5456648818125187234
@@ -18625,7 +18505,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -5495902117074765545, guid: 5f6df4bdbdc5fe54d8ffc379872e100a, type: 3}
 --- !u!1 &7528607173587099224
@@ -19334,7 +19214,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: -5495902117074765545, guid: 724dc5c9a4b6a4849852d771ba15a0a0, type: 3}
 --- !u!4 &8018333630203652226
