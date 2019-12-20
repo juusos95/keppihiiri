@@ -74,16 +74,16 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: Frog
+    clip: {fileID: 8300000, guid: 0d358a12d9f058144812b9cf42831b67, type: 3}
+    volume: 0.2
+    pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: Water
+    clip: {fileID: 8300000, guid: e1df3bd5c512c964b9c6fecd788b1444, type: 3}
+    volume: 0.5
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: 
