@@ -18,7 +18,7 @@ public class Playercontroller : MonoBehaviour
 
     private void FixedUpdate()
     {
-        anim.SetFloat("speed", rb.velocity.x);
+        anim.SetFloat("speed", moveInput);
         moveInput = Input.GetAxisRaw("Horizontal");
         transform.position += new Vector3(moveInput * speed * Time.deltaTime, 0, 0);
     }
