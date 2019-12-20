@@ -29,6 +29,7 @@ public class Berry : MonoBehaviour
         if (other.gameObject.tag == "Spear" && gm.poking && !berryOn)
         {
             berryOn = true;
+            rb.constraints = RigidbodyConstraints.FreezePositionZ;
             FixedJoint fj = gameObject.AddComponent<FixedJoint>();
             fj.connectedBody = other.gameObject.GetComponent<Rigidbody>();
             fj.connectedMassScale = 0;
@@ -39,7 +40,6 @@ public class Berry : MonoBehaviour
         berryOn = false;
         transform.rotation = spearParent.rotation;
         Destroy(GetComponent<FixedJoint>());
-        rb.constraints = RigidbodyConstraints.None;
         rb.AddExplosionForce(500, spearParent.position, 500);
     }
 }

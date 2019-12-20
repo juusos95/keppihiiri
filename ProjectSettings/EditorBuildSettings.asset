@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TimoMapScenet/Map1 viimeistely.unity
     guid: 685380d885677664eb5e4aaebd6ba777
+  - enabled: 1
+    path: Assets/Scenes/finish.unity
+    guid: ce0ad02befadca44999bfde11a4caa42
   m_configObjects: {}
