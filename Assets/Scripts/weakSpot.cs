@@ -1,9 +1,9 @@
-
+﻿
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class weakSpot : MonoBehaviour
+public class WeakSpot : MonoBehaviour
 {
     public GameManager gm;
     public int hp = 6;
@@ -20,6 +20,7 @@ public class weakSpot : MonoBehaviour
     {
         if (other.gameObject.tag == "Spear" && gm.poking)
         {
+            Debug.Log("guvbvauijf");
             GetComponentInParent<Rigidbody>().AddExplosionForce(5000, GameObject.FindGameObjectWithTag("Player").transform.position, 500);
             hp -= 1;
         }

@@ -45,7 +45,6 @@ public class StickJab : MonoBehaviour
         if (other.gameObject.tag == "ground" && poking)
         {
             rb.AddRelativeForce(Vector3.right * -jumpForce, ForceMode.VelocityChange);
-            Debug.Log("test");
         }
     }
     /*IEnumerator Jab()

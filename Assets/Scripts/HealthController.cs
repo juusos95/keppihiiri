@@ -22,7 +22,7 @@ public class HealthController : MonoBehaviour
     public void Update ()
     {
         healthBar.fillAmount = health / maxHealth;
-        if (health == 0f)
+        if (health <= 0f)
         {
             gamemanager.EndGame();
         }
