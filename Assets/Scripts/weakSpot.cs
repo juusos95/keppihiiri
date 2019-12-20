@@ -1,9 +1,9 @@
-﻿
+
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeakSpot : MonoBehaviour
+public class weakSpot : MonoBehaviour
 {
     public GameManager gm;
     public int hp = 6;
@@ -18,6 +18,7 @@ public class WeakSpot : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        Debug.Log("test");
         if (other.gameObject.tag == "Spear" && gm.poking)
         {
             Debug.Log("guvbvauijf");
