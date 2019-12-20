@@ -10,7 +10,7 @@ public class frogController : MonoBehaviour
     Vector3 jumpForce;
     bool aggro;
     bool goBack;
-    bool grounded;
+    public bool grounded;
     public int hp = 6;
     Animator anim;
     public GameManager gm;
