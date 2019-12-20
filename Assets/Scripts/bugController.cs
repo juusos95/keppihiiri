@@ -9,7 +9,7 @@ public class bugController : MonoBehaviour
     public bool attacking;
     public bool grounded;
     Rigidbody rb;
-    float attackForce = 500;
+    float attackForce = 20;
 
     public Transform player;
     Animator anim;
@@ -112,7 +112,7 @@ public class bugController : MonoBehaviour
         anim.SetBool("attacking", true);
         for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / time)
         {
-            rb.AddForce(charge, 0, 0);
+            rb.velocity = new Vector3(charge, rb.velocity.y, 0);
             yield return null;
         }
         anim.SetBool("attacking", false);
