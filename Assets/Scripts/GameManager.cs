@@ -17,6 +17,12 @@ public class GameManager : MonoBehaviour
 
     public Animator animator;
 
+    public Animator animator2;
+
+    public Animator animator3;
+
+    public Animator animator4;
+
     public void CompleteLevel()
     {
         finishMenuUI.SetActive(true);
@@ -32,7 +38,13 @@ public class GameManager : MonoBehaviour
             Debug.Log("Shindeiru");
             Invoke("Restart", restartDelay);
 
-            animator.SetBool("Killed", true);
+            animator.Play("Fadein");
+
+            animator2.Play("off");
+
+            animator3.Play("off");
+
+            animator4.Play("off");
         }
     }
 

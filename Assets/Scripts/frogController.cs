@@ -10,7 +10,7 @@ public class frogController : MonoBehaviour
     Vector3 jumpForce;
     bool aggro;
     bool goBack;
-    bool grounded;
+    public bool grounded;
     public int hp = 6;
     Animator anim;
     public GameManager gm;
@@ -24,18 +24,20 @@ public class frogController : MonoBehaviour
     {
         anim.SetBool("goBack", goBack);
         anim.SetBool("aggro", aggro);
-        anim.SetBool("jump", grounded);
+        anim.SetBool("grounded", grounded);
         if (hp <= 0)
         {
             Destroy(gameObject);
         }
         if (transform.position.x < player.position.x)
         {
+            transform.localScale = new Vector3(1, 1, -1);
             backSpeed = -2;
             jumpForce = new Vector3(500, 400, 0);
         }
         else if (transform.position.x > player.position.x)
         {
+            transform.localScale = new Vector3(1, 1, 1);
             backSpeed = 2;
             jumpForce = new Vector3(-500, 400, 0);
         }
@@ -54,6 +56,7 @@ public class frogController : MonoBehaviour
         }
         if (other.gameObject.tag == "Spear" && gm.poking)
         {
+            FindObjectOfType<AudioManager>().Play("Frog");
             hp -= 1;
             frog.AddExplosionForce(200, player.position, 500 / 3);
         }
@@ -64,12 +67,28 @@ public class frogController : MonoBehaviour
         {
             frog.AddForce(jumpForce);
         }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "aggroCheck")
+        {
+            aggro = false;
+        }
+        else if (other.gameObject.tag == "goBack")
+        {
+            goBack = false;
+        }
+    }
+    private void OnCollisionEnter(Collision other)
+    {
         if (other.gameObject.tag == "ground")
         {
             grounded = true;
         }
     }
-    private void OnTriggerExit(Collider other)
+
+    private void OnCollisionExit(Collision other)
     {
         if (other.gameObject.tag == "ground")
         {

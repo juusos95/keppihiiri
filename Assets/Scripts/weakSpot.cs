@@ -22,6 +22,7 @@ public class weakSpot : MonoBehaviour
         if (other.gameObject.tag == "Spear" && gm.poking)
         {
             Debug.Log("guvbvauijf");
+            FindObjectOfType<AudioManager>().Play("Bug");
             GetComponentInParent<Rigidbody>().AddExplosionForce(5000, GameObject.FindGameObjectWithTag("Player").transform.position, 500);
             hp -= 1;
         }
