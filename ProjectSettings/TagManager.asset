@@ -10,6 +10,9 @@ TagManager:
   - Spear
   - goBack
   - MaaliCheck
+  - Enemy
+  - Berri
+  - Vesi
   layers:
   - Default
   - TransparentFX

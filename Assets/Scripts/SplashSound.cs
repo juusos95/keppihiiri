@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class SplashSound : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider collider)
+    void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.tag == "Vesi" && collider.GetComponent<BoxCollider>())
+        if (collider.gameObject.tag == "Player")
         {
+            Debug.Log("rna");
             FindObjectOfType<AudioManager>().Play("Water");
         }
     }
