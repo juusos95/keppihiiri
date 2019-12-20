@@ -180,16 +180,16 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: Frog
+    clip: {fileID: 8300000, guid: 0d358a12d9f058144812b9cf42831b67, type: 3}
+    volume: 0.2
+    pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: 
-    clip: {fileID: 0}
-    volume: 0
-    pitch: 0
+  - name: Water
+    clip: {fileID: 8300000, guid: e1df3bd5c512c964b9c6fecd788b1444, type: 3}
+    volume: 0.3
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: 
@@ -1922,6 +1922,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 732258369095138479}
+  hp: 6
+  gm: {fileID: 7862696060890327053}
 --- !u!54 &2061824889073060950
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2356,7 +2358,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061824889073060948}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1, z: -0.8}
+  m_LocalPosition: {x: -0, y: 1, z: -0.71}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1614612684214678985}
@@ -2755,7 +2757,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 176206489433105}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -2.22, y: 0, z: 0}
+  m_LocalPosition: {x: -12.13, y: 5.44, z: 3.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3082233496636538439}
@@ -4033,7 +4035,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e93646967d4973148b2bb7d195e866a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bc: {fileID: 8074793685603641199}
   spearParent: {fileID: 8074793686589590748}
 --- !u!4 &8074793685603641196
 Transform:
